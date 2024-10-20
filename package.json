@@ -3,31 +3,26 @@
   "version": "1.0.0",
   "description": "A simple Electron app for Google Tasks",
   "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
   "devDependencies": {
     "electron": "^25.3.0",
-    "electron-builder": "^25.1.8"
+    "electron-builder": "^24.6.0"
   },
   "build": {
     "appId": "com.yourname.google-tasks-desktop",
     "productName": "Google Tasks Desktop",
-    "directories": {
-      "output": "dist"
+    "mac": {
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.productivity"
     },
     "files": [
       "**/*"
     ],
-    "mac": {
-      "category": "public.app-category.productivity"
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "linux": {
-      "target": "AppImage"
+    "directories": {
+      "output": "dist"
     }
-  },
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder"
   }
 }
